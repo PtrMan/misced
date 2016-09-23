@@ -2,7 +2,7 @@ module misced.memory.ArrayQueue;
 
 import std.algorithm.mutation : remove;
 
-void enqueue(Type)(Type[] arr, Type element) {
+void enqueue(Type)(ref Type[] arr, Type element) {
 	arr ~= element;
 }
 
@@ -14,9 +14,9 @@ unittest {
 	assert(arr[0] == 5);	
 }
 
-Type dequeue(Type)(Type[] arr) {
+Type dequeue(Type)(ref Type[] arr) {
 	Type result = arr[0];
-	arr.remove(0);
+	arr = arr.remove(0);
 	return result;
 }
 
