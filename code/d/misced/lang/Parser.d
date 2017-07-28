@@ -95,7 +95,7 @@ abstract class Parser(EnumOperationType) {
 
             ///// OPERATION
             case OPERATION:
-            if( this.Arcs[ArcTableIndex].Info == this.CurrentToken.contentOperation ) {
+            if( this.currentToken.type == Token!EnumOperationType.EnumType.OPERATION && this.Arcs[ArcTableIndex].Info == this.CurrentToken.contentOperation ) {
                ReturnValue = EnumRecursionReturn.OK;
             }
             else {
